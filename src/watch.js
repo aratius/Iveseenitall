@@ -1,14 +1,7 @@
-const program = require('commander')
 const fs = require('fs')
 
-const credentialPath = '../led-lighting-18db7-firebase-adminsdk-4f349-6119ff6bb2.json'
-let outputFilePath = './output/settings.json';
-
-program
- .option('-o, --out [path]', 'A path to an output file.')
- .parse(process.argv);
-
-if(program.out) outputFilePath = program.out;
+const credentialPath = '../firebaseconfig.json'
+let outputFilePath = './output/settings.json'
 
 const admin = require('firebase-admin')
 const serviceAccount = require(credentialPath)
