@@ -1,0 +1,16 @@
+{
+  "name": "led-lighting",
+  "version": "1.0.0",
+  "description": "",
+  "main": "watch.js",
+  "dependencies": {
+    "commander": "^7.0.0",
+    "firebase-admin": "^9.5.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
