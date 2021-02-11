@@ -1,9 +1,10 @@
-const fs = require('fs')
-
-const credentialPath = '../firebaseconfig.json'
-let outputFilePath = './output/settings.json'
-
 const admin = require('firebase-admin')
+const write = require('./write')
+const PATH = require('./paths')
+
+const credentialPath = PATH.credentialPath
+let outputFilePath = PATH.outputFilePath
+
 const serviceAccount = require(credentialPath)
 
 admin.initializeApp({
@@ -21,20 +22,11 @@ const unsub = db.collection('switch').doc('1').onSnapshot(snapshot => {
 
   const data = JSON.stringify(snapshot.data(), null, 2)
 
-  // ローカルファイルに書き出し
- fs.writeFile(outputFilePath, data, 'utf8', (error) => {
-  if (error) {
-    console.error(`[ERROR] Can't update ${outputFilePath}.`);
-    console.error(`[ERROR] ${error}`)
-    process.exit(1)
-  } else {
-    console.log(`[INFO] ${outputFilePath} was updated.`)
-  }
-})
+  write.write(outputFilePath, data)
 
 }, error => {
-console.error(`[ERROR] Can't observe firestore document.`)
-console.error(`[ERROR] ${error}`)
-process.exit(1)
+  console.error(`[ERROR] Can't observe firestore document.`)
+  console.error(`[ERROR] ${error}`)
+  process.exit(1)
   
 })
