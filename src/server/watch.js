@@ -1,6 +1,6 @@
 const admin = require('firebase-admin')
 const write = require('./write')
-const PATH = require('./paths')
+const PATH = require('../paths')
 const LED = require('./light')
 
 const credentialPath = PATH.credentialPath
