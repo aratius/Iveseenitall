@@ -1,7 +1,7 @@
 const program = require('commander')
 const fs = require('fs')
 
-const credentialPath = './led-lighting-18db7-firebase-adminsdk-4f349-6119ff6bb2.json'
+const credentialPath = '../led-lighting-18db7-firebase-adminsdk-4f349-6119ff6bb2.json'
 let outputFilePath = './output/settings.json';
 
 program
