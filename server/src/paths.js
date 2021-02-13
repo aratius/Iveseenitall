@@ -1,4 +1,4 @@
 module.exports = {
-  credentialPath: '../firebaseconfig.json',
+  credentialPath: '../../firebaseconfig.json',
   outputFilePath: './output/settings.json'
 }
